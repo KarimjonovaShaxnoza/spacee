@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ <div class="container mt-5">
+    <div class="row1">
+            <div class=" d-flex justify-content-between align-items-center">
+        <div class="user-img">
+            <img class="user-img" src="./img/Без названия.jpg" alt="">
+        </div>
+         <h1>FirstName: Shaxnoza</h1>
+         <h1>LastName: Karimjonova</h1>
+         <h1>Age: 17</h1>
+         <h1 class="text">Coins: 1398</h1>
+    </div>
+    </div>
+ </div>
+
+ <div class="container">
+    <div class="row my-5">
+        <div class="col-3 card p-3">
+            <img style="border-radius: 50%;"class="user-img" src="" alt="">
+            <p class="fs-2 name"></p>
+            <p class="coin text-warning"></p>
+            <p class="xp text-succes"></p>            
+        </div> 
+    </div>
+ </div>
+    
+ 
+</body>
+ <script>
+
+    let userObj = {
+        id: "123456",
+        password: '1234',
+        name: 'Shaxnoza',
+        lastName: "Karimjonova",
+        coin: 1398,
+        xp: 0,
+        group: "F2-1702"
+    }
+  
+    let token = JSON.parse(localStorage.getItem('token'))
+
+    const fisrtName = document.querySelector('.name')
+    const coin = document.querySelector('.coin')
+    const userImg = document.querySelector('.user-img')
+    
+    if(token.id == userObj.id && token.password == userObj.password) {
+        fisrtName.textContent = `Ism-familiyasi: ${userObj.name} ${userObj.lastName}`
+        coin.textContent = userObj.coin
+        userImg.src = userObj.img
+    }
+    
+
+ </script>
+<body>
+</html>
+
